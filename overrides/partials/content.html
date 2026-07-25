@@ -1,0 +1,38 @@
+{% if page.edit_url %}
+<a href="{{ page.edit_url }}" title="{{ lang.t('edit.link.title') }}" class="md-content__button md-icon">
+  {% set icon = config.theme.icon.edit or "material/file-edit-outline" %}
+  {% include ".icons/" ~ icon ~ ".svg" %}
+</a>
+{% endif %}
+{% if "material/tags" in config.plugins %}
+  {% include "partials/tags.html" %}
+{% endif %}
+{% if page.meta and page.meta.hide %}
+  {% set hidden = "hidden" if "content" in page.meta.hide %}
+{% endif %}
+{% if not "\x3ch1" in page.content %}
+  <h1>{{ page.title | d(config.site_name, true)}}</h1>
+{% endif %}
+{{ page.content }}
+{% if page.meta and page.meta.comments %}
+<hr class="comments-divider">
+<h2 id="__comments">💬 评论</h2>
+<div class="giscus-comments" style="margin-top: 2rem;">
+  <script src="https://giscus.app/client.js"
+          data-repo="academy-rust/academy-rust.github.io"
+          data-repo-id="R_kgDOTaoHnQ"
+          data-category="Q&A"
+          data-category-id="DIC_kwDOTaoHnc4DB69V"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="preferred_color_scheme"
+          data-lang="zh-CN"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async>
+  </script>
+</div>
+{% endif %}

@@ -1,0 +1,263 @@
+/* ── Rust brand colors ── */
+
+:root {
+  --rust-orange: #d34516;
+  --rust-orange-light: #e85d30;
+  --rust-orange-dark: #a33410;
+  --rust-accent: #F7A600;
+  --rust-dark-bg: #1a1a2e;
+  --rust-darker-bg: #13132a;
+  --rust-brown: #3d2b24;
+  --rust-gray: #4A4A4A;
+  --rust-light-gray: #A0A0A0;
+  --rust-orange-rgb: 211, 69, 22;
+  --rust-accent-rgb: 247, 166, 0;
+}
+
+/* ── Material theme overrides ── */
+
+[data-md-color-primary=indigo] {
+  --md-primary-fg-color: var(--rust-orange);
+  --md-primary-fg-color--light: var(--rust-orange-light);
+  --md-primary-fg-color--dark: var(--rust-orange-dark);
+  --md-accent-fg-color: var(--rust-orange);
+  --md-typeset-a-color: var(--rust-orange);
+}
+
+[data-md-color-scheme=default] [data-md-color-primary=indigo] {
+  --md-primary-fg-color: var(--rust-orange);
+  --md-accent-fg-color: var(--rust-orange);
+}
+
+[data-md-color-scheme=slate] [data-md-color-primary=indigo] {
+  --md-primary-fg-color: var(--rust-orange-light);
+  --md-accent-fg-color: var(--rust-orange-light);
+}
+
+/* ── Header (dark, like Rust Foundation) ── */
+
+.md-header {
+  background: var(--rust-dark-bg);
+  color: #fff;
+  border-bottom: 3px solid var(--rust-orange);
+}
+
+.md-header--shadow {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.md-header__title,
+.md-header__title .md-ellipsis,
+.md-header__topic {
+  color: #fff;
+}
+
+.md-header__button {
+  color: #fff;
+}
+
+.md-header__button:hover {
+  color: var(--rust-orange);
+  opacity: 1;
+}
+
+.md-source {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.md-source:hover {
+  color: #fff;
+}
+
+/* ── Search in dark header ── */
+
+.md-search__input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  color: #fff;
+}
+
+.md-search__input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.md-search__input:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.md-search__icon {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ── Typography ── */
+
+.md-typeset h1 {
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--rust-dark-bg);
+}
+
+.md-typeset h2 {
+  padding-bottom: 6px;
+  border-bottom: 2px solid rgba(var(--rust-orange-rgb), 0.2);
+  color: var(--rust-dark-bg);
+}
+
+.md-typeset h3 {
+  border-left: 4px solid var(--rust-orange);
+  padding-left: 10px;
+  margin-left: -14px;
+}
+
+.md-typeset a {
+  color: var(--rust-orange);
+}
+
+.md-typeset a:hover {
+  color: var(--rust-orange-dark);
+}
+
+/* ── Code ── */
+
+.md-typeset code {
+  border-radius: 4px;
+  padding: 0.1em 0.3em;
+  font-weight: 500;
+}
+
+.md-typeset pre > code {
+  padding: 0;
+}
+
+/* ── Footer ── */
+
+.md-footer {
+  background-color: var(--rust-dark-bg);
+  border-top: 3px solid var(--rust-orange);
+}
+
+.md-footer-meta {
+  background-color: var(--rust-darker-bg);
+}
+
+/* ── Scroll-to-top button ── */
+
+.md-top {
+  background-color: var(--rust-orange);
+}
+
+.md-top:hover {
+  background-color: var(--rust-orange-dark);
+}
+
+/* ── Selection ── */
+
+::selection {
+  background: rgba(var(--rust-orange-rgb), 0.2);
+}
+
+/* ── Sidebar navigation ── */
+
+.md-nav__link--active {
+  color: var(--rust-orange) !important;
+  font-weight: 600;
+}
+
+.md-nav__item .md-nav__link--active {
+  border-left: 2px solid var(--rust-orange);
+}
+
+/* ── Homepage hero ── */
+
+.hero-emoji {
+  text-align: center;
+  padding: 20px 0 10px;
+  font-size: 5em;
+  animation: crab-bounce 2s ease-in-out infinite;
+}
+
+@keyframes crab-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ── Callout box ── */
+
+.rust-callout {
+  background: rgba(var(--rust-orange-rgb), 0.06);
+  padding: 24px 28px;
+  border-radius: 8px;
+  border-left: 4px solid var(--rust-orange);
+  margin: 20px 0;
+}
+
+/* ── Course cards ── */
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 30px 0;
+}
+
+.course-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 4px solid var(--rust-orange);
+  border-radius: 6px;
+  padding: 22px 24px;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.course-card:hover {
+  border-left-width: 6px;
+  border-color: var(--rust-orange);
+  box-shadow: 0 4px 16px rgba(var(--rust-orange-rgb), 0.12);
+  transform: translateX(4px);
+}
+
+.course-card-title {
+  font-size: 1.15em;
+  font-weight: 700;
+  color: var(--rust-dark-bg);
+}
+
+.course-card:hover .course-card-title {
+  color: var(--rust-orange);
+}
+
+[data-md-color-scheme="slate"] .course-card {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-md-color-scheme="slate"] .course-card-title {
+  color: #e0e0e0;
+}
+
+[data-md-color-scheme="slate"] .course-card:hover {
+  border-color: var(--rust-orange);
+  box-shadow: 0 4px 16px rgba(var(--rust-orange-rgb), 0.2);
+}
+
+[data-md-color-scheme="slate"] .course-card:hover .course-card-title {
+  color: var(--rust-orange);
+}
+
+/* ── Comments (Giscus) ── */
+
+.comments-divider {
+  margin-top: 3rem;
+  border: none;
+  border-top: 2px solid rgba(var(--rust-orange-rgb), 0.3);
+}
+
+.giscus-comments {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}

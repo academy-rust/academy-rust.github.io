@@ -1,0 +1,79 @@
+site_name: Academy Rust
+site_url: https://academy-rust.github.io/
+site_author: Rust Academy
+site_description: >-
+  Academy Rust - Rust学习资源和课程推荐
+
+# 仓库配置
+repo_url: https://github.com/academy-rust/academy-rust.github.io
+repo_name: academy-rust/academy-rust.github.io
+
+copyright: Copyright &copy; 2026 Rust Academy
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: zh
+  static_templates:
+    - 404.html
+  favicon: images/favicon.ico
+  apple-touch-icon-precomposed: images/mobile_icon.png
+  include_search_page: false
+  search_index_only: true
+
+  features:
+    - header.autohide
+    - navigation.tracking
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+    - content.code.annotate
+    - toc.integrate
+
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+
+  font:
+    text: Roboto Slab
+    code: Roboto Mono
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - footnotes
+
+plugins:
+  - search:
+      lang:
+        - zh
+  - git-revision-date:
+  - open-in-new-tab:
+
+extra:
+  analytics:
+    provider: google
+    property: G-KJB4RXSKZG
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - 首页: "index.md"
+  - Rust 编程语言: "rust-programming.md"
+  - Rust 与编译器: "rust-compiler.md"
+  - Rust 与操作系统: "rust-os.md"
+  - Rust 与数据库: "rust-database.md"
